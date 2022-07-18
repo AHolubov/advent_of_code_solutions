@@ -14,6 +14,7 @@ int main()
 
     int horizontal = 0;
     int depth = 0;
+    int aim = 0;
 
     enum Direction {FORWARD, DOWN, UP};
 
@@ -38,12 +39,13 @@ int main()
                 {
                 case FORWARD:
                     horizontal += instruction[1];
+                    depth += instruction[1] * aim;
                     break;
                 case DOWN:
-                    depth += instruction[1];
+                    aim += instruction[1];
                     break;
                 case UP:
-                    depth -= instruction[1];
+                    aim -= instruction[1];
                     break;
                 
                 default:
